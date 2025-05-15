@@ -1,0 +1,223 @@
+//////////////add10////////////////
+
+import customMap from "./customMap.js";
+
+let array = [1,2,3,4,5,6];
+
+
+
+// const result = customMap(array,function(num){
+//     return num + 10;
+// })
+ const result =  customMap(array,(num)=> num +10);
+
+
+
+console.log(result);
+
+//////firstLetter
+
+import customMap from "./customMap.js";
+
+
+const vehicles = ['taxi','car','van','train','plane'];
+
+const result = customMap(vehicles,(element)=>element.slice(0,1));
+
+//////////////////length///////
+import customMap from "./customMap.js";
+
+
+const vehicles = ['taxi','car','van','train','plane'];
+
+const result = customMap(vehicles,(element)=>element.length);
+
+
+
+console.log(result);
+
+
+////numberToStrings///
+import customMap from "./customMap.js"
+
+let array = [1,2,3,4,5,6];
+
+const convertedStrings = customMap(array,(num) => num.toString());
+
+console.log(convertedStrings);
+
+
+////////////prefix/////////
+import customMap from "./customMap.js";
+
+
+const vehicles = ['taxi','car','van','train','plane'];
+
+const result = customMap(vehicles,(element)=>`item ${element}`);
+
+
+
+console.log(result);
+
+///////////square////////////
+
+import customMap from "./customMap.js"
+let array = [1,2,3,4,5,6];
+
+
+
+
+
+const result =  customMap(array,(num)=> num *  num);
+
+console.log(result);
+
+
+
+////////////////////////Convert///////
+
+import customReduce from "./customMap.js";
+
+const celsius = ["33","35"];
+
+const fahrenhite = customReduce(celsius,(temp) => (9 *temp)/5+32);
+
+console.log(fahrenhite);
+
+
+
+///underscore//////////
+
+import customMap from "./customMap.js";
+
+
+const texts = ["hello world", "foo bar", "no_space_here", "multiple   spaces"];
+
+const result = customMap(texts,(text)=>text.replaceAll(" ","_"));
+
+console.log(result);
+
+
+//////////uppercase//////////
+
+import customMap from "./customMap.js";
+
+
+const array = ['s','a','k','i','b'];
+
+const result = customMap(array,(element)=>element.toUpperCase());
+
+
+
+console.log(result);
+
+///////filter/////////////////////////
+
+// export const customFilter = (array, callback) => {
+//   let  result = [];
+//   for (element of array) {
+//     if (callback(element)) {
+//       result.push(element);
+//     }
+//   }
+
+//   return result;
+// };
+
+export const customFilter2 = (arr, callback) => {
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i], i)) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+};
+
+
+///even numbers/////////
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// const even = customFilter(numbers, (number) => number % 2 === 0);
+
+// console.log(even);
+
+///////filter string shorter than 4//////////////
+
+// const strings = ["Hello World", "Bye", "Rocket", "Bottle"];
+
+// const result = customFilter(strings, (element) => element.length < 4);
+
+// console.log(result);
+//////////////////////////////////////////////////////////////////////////////////
+
+//////////////positive values////////////////////////////
+
+// const numbers = [1, -2, 3, -4, -5, 6, 7, 8, 9, 10];
+// const result = customFilter(numbers, (element) => element > 0);
+
+//////////////////check if the first word is capital//////////////////
+// const strings = ["hello World", "Bye", "rocket", "Bottle"];
+// const result = customFilter(
+//   strings,
+//   (element) => element[0] === element[0].toUpperCase()
+// );
+
+/////////////////////////Keep objects with a certain property (isActive === true).///////////////////
+// const object = [
+//   {
+//     id: 1,
+//     name: "A",
+//     isActive: true,
+//   },
+//   {
+//     id: 2,
+//     name: "B",
+//     isActive: false,
+//   },
+//   {
+//     id: 3,
+//     name: "C",
+//     isActive: false,
+//   },
+// ];
+
+// const result = customFilter(object, (element) => element.isActive === true);
+
+//////////divisivle by 3
+
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const result = customFilter(numbers, (element) => element % 3 === 0);
+
+///////////////////////////////Remove falsy values ///////////////////////
+
+// const numbers = [1, 2, 0, undefined, 5, null, 7, "", 9, false];
+// const result = customFilter(numbers, (element) => element);
+
+//keep strings that are palindrome
+
+// const strings = ["Madam", "racecar", "leg"];
+// const result = customFilter(strings, (element) => {
+//   element = element.toLowerCase();
+//   return element === element.split("").reverse().join("");
+// });
+
+///duplicate entries/////////////////
+
+// const fruits = ["apple", "banana", "apple", "orange", "banana", "grape"];
+
+// const result = customFilter2(fruits,(item,index)=>{
+//   return fruits.indexOf(item) === index;
+// })
+
+
+////////////specific substring///////
+
+// const strings = ["apple", "banana", "appleerror", "orange", "banana", "grape","lichierror"];
+
+// const result = customFilter(strings,(item)=>{
+//   // return item.indexOf("error")>-1;
+//   return item.includes("error");
+// })
+// console.log(result);
+
