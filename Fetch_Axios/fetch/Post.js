@@ -43,4 +43,49 @@ async function postData() {
   }
 }
 
-postData();
+const post2 = { title: "PEOWPEOPWOEP", body: "WEWEWEEWE" };
+
+async function updateData() {
+  try {
+    if (!post2.title || !post2.body) {
+      throw new Error("Please include title and body");
+    }
+    const response = await fetch(`${url}/NIjPHFX9oTOZ5gHoQKIRR`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(post2),
+    });
+    if (!response.ok) {
+      throw new Error(`Failed to post ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log("Post Successful", data);
+  } catch (err) {
+    console.log("Error", err.message);
+  }
+}
+
+async function deleteData() {
+  try {
+    const response = await fetch(`${url}/NIjPHFX9oTOZ5gHoQKIRR`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (!response.ok) {
+      throw new Error(`Failed to post ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log("Delete Successful", response.status);
+  } catch (err) {
+    console.log("Error", err.message);
+  }
+}
+//postData();
+//updateData();
+deleteData();

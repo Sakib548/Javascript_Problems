@@ -1,19 +1,14 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "title": "A",
       "body": "lorem lorem lorem lorem lorem"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "B",
       "body": "loremloremloremloremloremloremloremloremlorem"
-    },
-    {
-      "id": "NIjPHFX9oTOZ5gHoQKIRR",
-      "title": "C",
-      "body": "WEWEWEEWE"
     }
   ]
 }
